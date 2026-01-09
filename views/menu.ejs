@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+    <%- include('./partial/nav') %>
+  <h1>Full Menu</h1>
+  <div>
+    <h1>Mains</h1>
+    <% menu.forEach((plate) => { %>
+        <% if(plate.category === "mains"){ %>
+    <h2>plate name: <%= plate.name  %></h2>
+    <h2>plate price: <%= plate.price %></h2>
+    <h2>plate rating: <%= plate.rating %></h2>
+    <h2>plate details: <%= plate.details %></h2>
+
+    
+  <% }}) %>
+  </div>
+  <div>
+    <h1>Desserts</h1>
+    <h1></h1>
+    <% menu.forEach((plate) => { %>
+        <% if(plate.category === "desserts"){ %>
+    <h2>plate name: <%= plate.name  %></h2>
+    <h2>plate price: <%= plate.price %></h2>
+    <h2>plate rating: <%= plate.rating %></h2>
+    <h2>plate details: <%= plate.details %></h2>
+
+    
+  <% }}) %>
+  </div>
+  <div>
+    <h1>Sides</h1>
+    
+    <% menu.forEach((plate) => { %>
+        <% if(plate.category === "sides"){ %>
+    <h2>plate name: <%= plate.name  %></h2>
+    <h2>plate price: <%= plate.price %></h2>
+    <h2>plate rating: <%= plate.rating %></h2>
+    <h2>plate details: <%= plate.details %></h2>
+
+    
+  <% }}) %>
+  </div>
+  
+</body>
+</html>

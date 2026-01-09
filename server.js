@@ -3,7 +3,23 @@ const app = express();
 
 app.get('/', (req, res) => {
     res.render("home.ejs", {restaurant: RESTAURANT})
-});
+})
+
+app.get('/menu', (req, res) => {
+    res.render("menu.ejs", {menu: RESTAURANT.menu})
+})
+
+app.get('/menu/:category', (req, res) => {
+    const requestedCategory = req.params.category 
+
+    const categoryMenu = RESTAURANT.menu.filter(plate => plate.category === requestedCategory)
+    res.render("category.ejs",{
+      category: requestedCategory,
+      menu: categoryMenu
+    })
+
+
+})
 
 const RESTAURANT = {
   name: 'The Green Byte Bistro',
